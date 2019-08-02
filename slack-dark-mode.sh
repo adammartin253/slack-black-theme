@@ -25,3 +25,7 @@ echo "This script requires sudo privileges." && echo "You'll need to provide you
 sudo npx asar extract ${SLACK_RESOURCES_DIR}/app.asar ${SLACK_RESOURCES_DIR}/app.asar.unpacked
 sudo tee -a "${SLACK_FILE_PATH}" > /dev/null <<< "$JS"
 sudo npx asar pack ${SLACK_RESOURCES_DIR}/app.asar.unpacked ${SLACK_RESOURCES_DIR}/app.asar
+
+pkill Slack
+
+open -a /Applications/Slack.app
